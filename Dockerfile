@@ -2,8 +2,6 @@ FROM golang:alpine
 
 RUN apk add --no-cache --update alpine-sdk bash
 
-ENV GO111MODULE=on
-
 WORKDIR /app
 
 COPY go.mod .
