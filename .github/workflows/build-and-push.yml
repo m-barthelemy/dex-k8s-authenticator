@@ -50,7 +50,7 @@ jobs:
         # Build the images for the platforms specified above, and outputs a digest
         name: Build and push by digest
         id: build
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v7
         with:
           context: .
           platforms: ${{ matrix.platform }}
@@ -65,7 +65,7 @@ jobs:
       -
         # Digest uploaded as artifact for use on the next job (merge)
         name: Upload digest
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: digests
           path: /tmp/digests/*
