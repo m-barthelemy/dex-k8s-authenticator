@@ -22,7 +22,7 @@ FROM dhi.io/alpine-base:3.23-dev
 #  experience when this doesn't work out of the box.
 #
 # OpenSSL is required so wget can query HTTPS endpoints for health checking.
-RUN apk add --update --upgrade ca-certificates openssl curl tini
+RUN apk add --update --upgrade ca-certificates openssl tini
 
 RUN mkdir -p /app/bin
 COPY --from=0 /app/bin/dex-k8s-authenticator /app/bin/
